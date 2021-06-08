@@ -39,7 +39,6 @@ void	treat_string(char *string, int pid)
 	while (string[i])
 	{
 		treat_char(string[i], pid);
-		usleep(50);
 		i++;
 	}
 	treat_char(string[i], pid);
@@ -54,7 +53,7 @@ int	main(int argc, char **argv)
 		message(1);
 	hello.sa_sigaction = signal_handler;
 	sigaction(SIGUSR1, &hello, 0);
-	sigaction(SIGUSR2, &hello, 0);
+	//sigaction(SIGUSR2, &hello, 0);
 	pid = ft_atoi(argv[1]);
 	treat_string(argv[2], pid);
 	while (1)

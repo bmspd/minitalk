@@ -22,7 +22,6 @@ static int 	treat_char(int index, siginfo_t *info, int i)
 
 	(void)info;
 	c = 0;
-	usleep(10);
 	if (index == SIGUSR1)
 	{
 		c += (1 << (7 - i));
